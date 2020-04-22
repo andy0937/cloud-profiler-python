@@ -51,4 +51,5 @@ cd "kokoro"
 # dependencies breaking this test.
 go mod init e2e
 retry go get -d .
-go test -timeout=30m -run TestAgentIntegration -gcs_location="${GCS_LOCATION}"
+go test -c
+./e2e.test  -gcs_location="${GCS_LOCATION}"
